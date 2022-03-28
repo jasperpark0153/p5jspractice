@@ -8,7 +8,7 @@ var radiusLimit = 80;
 
 var circles = [];
 
-// Testing if the git is working on mac
+
 
 class Circle{
   constructor(radius, horizontal_speed, vertical_speed, color) {
@@ -64,7 +64,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
 
-  circle_1 = new Circle(3, 6, 6, ('yellow'));
+  circle_1 = new Circle(50, 6, 6, ('yellow'));
   circle_2 = new Circle(25, 6, 6, ('lime'));
   circle_3 = new Circle(50, 6, 6, ('pink'));
   circle_4 = new Circle(30, 6, 6, ('blue'));
@@ -90,55 +90,77 @@ function draw() {
   // circles[3].create();
   // circles[4].create();
 
-  
+  text(frameCount, width/2,height/2);
 
-  for(let i = 0; i < circles.length; i++){
-    circles[i].create();
-    if (circles[i].radius < radiusLimit){
-      circles[i].increaseSize();
-    } else {
-      circles.splice(i);
-    }
+  if (frameCount % 119 != 0){
+    circles[0].create();
+  } else {
+    circles.splice(0);
   }
 
+  
+  
+
+  
   /* HOMEWORK */
-  /* every two seconds you must create a circle in a random position. The radius, and color does not matter */
-
+  /* 1. Every two seconds you must create a circle in a random position. The radius, and color does not matter 
+  2. Every circle's radii should increase.
+  3. For each circle, when the radius reaches its maximum size (100), the circle must stop growing. */
+  
   // if (circles[0].radius < radiusLimit){
-  //   circles[0].increaseSize()
-  // }
-
+    //   circles[0].increaseSize()
+    // }
+    
   // if (circles[1].radius < radiusLimit){
-  //   circles[1].increaseSize()
-  // }
-  
+    //   circles[1].increaseSize()
+    // }
+      
   // if (circles[2].radius < radiusLimit){
-  //   circles[2].increaseSize()
-  // }
-
+    //   circles[2].increaseSize()
+      // }
+        
   // if (circles[3].radius < radiusLimit){
-  //   circles[3].increaseSize()
-  // }
-
+    //   circles[3].increaseSize()
+      // }
+          
   // if (circles[4].radius < radiusLimit){
-  //   circles[4].increaseSize()
+    //   circles[4].increaseSize()
   // }
-
-
-
+  
+  
+  
   // if (circle_1.radius < radiusLimit){
-  //   circle_1.increaseSize();
+    //   circle_1.increaseSize();
+    // }
+    
+    
+  // for(let i = 0; i < circles.length; i++){
+  //   circles[i].create();
+  //   if (circles[i].radius < radiusLimit){
+  //     circles[i].increaseSize();
+  //   } else {
+  //     circles.splice(i);
+  //   }
   // }
-
+    
+    
+    
+    
+    // if (dist(mouseX, mouseY, circle_1.xaxis, circle_1.yaxis) <= circle_1.radius){
+      //   console.log("hehexd");
+      // }
+      
   
-
-
-
-
-  // if (dist(mouseX, mouseY, circle_1.xaxis, circle_1.yaxis) <= circle_1.radius){
-  //   console.log("hehexd");
-  // }
-  
-
+  // for(let i = 0; i < circles.length; i++){
+    //   circles[i].create();
+    //   if (circles[i].radius < radiusLimit){
+      //     circles[i].increaseSize();
+      //   } else {
+        //     circles.splice(i);
+        //   }
+        // }
+        
+        
 }
-
+      
+      
