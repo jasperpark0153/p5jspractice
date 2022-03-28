@@ -8,7 +8,7 @@ var radiusLimit = 80;
 
 var circles = [];
 
-
+// Testing if the git is working on mac
 
 class Circle{
   constructor(radius, horizontal_speed, vertical_speed, color) {
