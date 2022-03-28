@@ -6,7 +6,7 @@ var mouseCircle;
 
 var radiusLimit = 80;
 
-var circles = [];
+const circles = [];
 
 
 
@@ -82,21 +82,25 @@ function draw() {
 
   background(105,105,105);
 
-  console.log(circles.length);
-
   // circles[0].create();
   // circles[1].create();
   // circles[2].create();
   // circles[3].create();
   // circles[4].create();
+  
+  console.log(circles.length);
+  console.log(circles);
+  
+  text((frameCount / 60).toFixed(2) , width/2,height/2);
 
-  text(frameCount, width/2,height/2);
 
-  if (frameCount % 119 != 0){
+  if (0 < frameCount % 240 && frameCount % 240 < 119){
     circles[0].create();
   } else {
     circles.splice(0);
+    circles.splice(0, 0, circle_1);
   }
+
 
   
   
