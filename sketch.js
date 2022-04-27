@@ -50,31 +50,13 @@ class Circle{
   disappear(){
     this.radius = 0;
   }
-
-  
-
   
 }
 
 
-
-
 function setup() {
   
-  createCanvas(windowWidth, windowHeight);
-
-
-  circle_1 = new Circle(50, 6, 6, ('yellow'));
-  circle_2 = new Circle(25, 6, 6, ('lime'));
-  circle_3 = new Circle(50, 6, 6, ('pink'));
-  circle_4 = new Circle(30, 6, 6, ('blue'));
-  circle_5 = new Circle(60, 6, 6, ('white'));
-
-  circles.push(circle_1);
-  circles.push(circle_2);
-  circles.push(circle_3);
-  circles.push(circle_4);
-  circles.push(circle_5);
+  createCanvas(windowWidth, windowHeight); 
 
 }
 
@@ -82,18 +64,21 @@ function draw() {
 
   background(105,105,105);
 
-  // circles[0].create();
-  // circles[1].create();
-  // circles[2].create();
-  // circles[3].create();
-  // circles[4].create();
-  
+  // creating new circles each time (each frame)
+  circle_1 = new Circle(50, 6, 6, ('yellow'));
+  circles.push(circle_1);
+  circles.splice(1);
+
+
+  // debugging source
   console.log(circles.length);
   console.log(circles);
+  console.log(circle_1.xaxis);
+
   
   text((frameCount / 60).toFixed(2) , width/2,height/2);
 
-
+  // Make circle appear and dissapear every 2 second
   if (0 < frameCount % 240 && frameCount % 240 < 119){
     circles[0].create();
   } else {
