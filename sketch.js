@@ -4,7 +4,7 @@ var circle_1;
 var circle_2;
 var mouseCircle;
 
-var radiusLimit = 80;
+var radiusLimit = 100;
 
 const circles = [];
 
@@ -65,7 +65,9 @@ function draw() {
   background(105,105,105);
 
   // creating new circles each time (each frame)
-  circle_1 = new Circle(50, 6, 6, ('yellow'));
+  circle_1 = new Circle(10, 6, 6, ('yellow'));
+  circle_2 = new Circle(25, 6, 6, ('lime'));
+
   circles.push(circle_1);
   circles.splice(1);
 
@@ -81,6 +83,7 @@ function draw() {
   // Make circle appear and dissapear every 2 second
   if (0 < frameCount % 240 && frameCount % 240 < 119){
     circles[0].create();
+    circles[0].increaseSize();
   } else {
     circles.splice(0);
     circles.splice(0, 0, circle_1);
